@@ -4,8 +4,10 @@ import os
 
 host_run=os.environ.get('HOST_RUN', '0.0.0.0')
 debug=os.environ.get('DEBUG', 'True')
+host_redis=os.environ.get('HOST_REDIS','redis')
+port_redis=os.environ.get('PORT_REDIS','6379')
 app = Flask(__name__)
-redis = Redis(host='redis', port=6379)
+redis=Redis(host=host_redis,port=port_redis)
 
 @app.route('/')
 def hello():

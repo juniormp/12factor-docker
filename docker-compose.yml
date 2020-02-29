@@ -11,6 +11,8 @@ services:
     environment:
      - HOST_RUN=${HOST_RUN}
      - DEBUG=${DEBUG}
+     - PORT_REDIS=6379
+     - HOST_REDIS=redis
   redis:
     image: redis:3.2.1
     volumes:
